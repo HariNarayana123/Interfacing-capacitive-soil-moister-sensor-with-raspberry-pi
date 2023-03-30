@@ -14,6 +14,6 @@ def read_adc(channel):
      
 while True:
      res=read_adc(channel)
-     print(" voltage: ", voltage)
+     print("voltage: ", voltage)
      time.sleep(0.5)
 spi.close()
