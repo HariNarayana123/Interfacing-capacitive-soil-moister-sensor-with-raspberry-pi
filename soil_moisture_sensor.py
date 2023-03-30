@@ -15,5 +15,6 @@ def read_adc(channel):
 while True:
      res=read_adc(channel)
      print("voltage: ", voltage)
+     #voltage is directly proptional to soil moisture content
      time.sleep(0.5)
 spi.close()
