@@ -13,8 +13,14 @@ def read_adc(channel):
       return round(voltage,2)
      
 while True:
+  try:    
      res=read_adc(channel)
      print("voltage: ", voltage)
      #voltage is directly proptional to soil moisture content
-     time.sleep(0.5)
-spi.close()
+     time.sleep(1)
+  except KeyboardInterrupt:
+    print("User interrupted the program.")
+    sys.exit()
+  finally:
+    GPIO.cleanup()    
+    Spi.close()
